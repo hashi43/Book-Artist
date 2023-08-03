@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+<title>Add Category</title>
+{% extends 'artist_panel/artist_index.html' %}
+{% block body %}
+<form action="/add_category_post" method="post" enctype="multipart/form-data" name="form1">
+  <table class="table table-bordered table-striped table-hover">
+    <tr>
+      <th>Programme</th>
+      <td><input type="text" name="textfield" id="textfield" class="form-control" required pattern="[A-Z a-z.]{3,25}"></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><textarea name="textarea" id="textarea"  class="form-control" required ></textarea></td>
+    </tr>
+    <tr>
+      <th>Photo</th>
+      <td><input type="file" name="fileField" id="fileField"  class="form-control" required></td>
+    </tr>
+    <tr>
+      <th>Budget</th>
+      <td><input type="text" name="textfield2" id="textfield2"  class="form-control" required ></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button" value="save" class="btn btn-success"></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

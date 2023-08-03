@@ -1,0 +1,38 @@
+{% extends 'artist_panel/artist_index.html' %}
+{% block body %}
+<form action="/edit_highlight_post" method="post" enctype="multipart/form-data" name="form1">
+  <table class="table table-bordered table-striped table-hover">
+  <tr>
+      <td><img src="{{ data['photo_1'] }}" width="100px" height="100px"></td><td><img src="{{ data['photo_2'] }}" width="100px" height="100px"></td>
+  </tr>
+    <tr>
+      <th>Name</th>
+      <td><input type="text" name="textfield" id="textfield" value="{{ data['name'] }}" class="form-control" required></td>
+    </tr>
+    <tr>
+      <th> Programme Name</th>
+      <td><select name="select" id="select" class="form-control" required>
+          <option value="{{ data['program_id'] }}">{{ data['program_name'] }}</option>
+          {% for i in data1 %}
+              <option value="{{ i['program_id'] }}">{{ i['program_name'] }}</option>
+          {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><textarea name="textarea" id="textarea" value="{{ data['description'] }}" class="form-control" required></textarea></td>
+    </tr>
+    <tr>
+      <th>Photo 01</th>
+      <td><input type="file" name="fileField" id="fileField" class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Photo 02</th>
+      <td><input type="file" name="fileField2" id="fileField2" class="form-control"></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" name="button" id="button" value="Update" class="btn btn-success"></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

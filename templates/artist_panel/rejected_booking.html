@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+<title>Rejected Bookings</title>
+{% extends 'artist_panel/artist_index.html' %}
+{% block body %}
+<form name="form1" method="post" action="/rejected_booking_post">
+  <table class="table table-borderless">
+    <tr>
+        <th>From</th>
+      <td><input type="date" name="textfield" id="textfield" class="form-control"/></td>
+        <th>To</th>
+        <td><input type="date" name="textfield1" id="textfield1" class="form-control"/></td>
+      <td><input type="submit" name="button" id="button" value="Search" class="btn btn-primary"/></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table class="table table-bordered table-striped table-hover">
+    <tr style="background: #e01f3d; color: #ffffff">
+      <th>SI NO</th>
+      <th>User Details</th>
+      <th>Programme</th>
+      <th>Budget</th>
+      <th>Charted Date</th>
+      <th>Location</th>
+      <th>Status</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{loop.index }}</td>
+      <td>&nbsp;{{ i['name'] }}
+      <br>{{ i['email'] }}
+      <br>{{ i['phone'] }}
+      <br>{{ i['place'] }}
+      <br>{{ i['post'] }}
+      <br>{{ i['district'] }}
+      <br>{{ i['pincode'] }}</td>
+      <td>&nbsp;{{ i['program_name'] }}</td>
+      <td>{{ i['budget'] }}</td>
+      <td>{{ i['bdate'] }}</td>
+      <td>&nbsp;{{ i['location'] }}</td>
+      <td>&nbsp;{{ i['status'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

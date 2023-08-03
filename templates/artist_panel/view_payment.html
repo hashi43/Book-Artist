@@ -1,0 +1,28 @@
+{% extends 'artist_panel/artist_index.html' %}
+{% block body %}
+<form name="form1" method="post" action="">
+  <p>&nbsp;</p>
+  <table class="table table-bordered table-striped table-hover">
+    <tr>
+      <th>Date</th>
+      <td>{{ data['date']}}</td>
+    </tr>
+    <tr>
+        <th>Bank</th>
+        <td>{{ data['bank_name'] }}</td>
+    </tr>
+    <tr>
+      <th>Account No</th>
+      <td>{{ data['account_no']}}&nbsp;</td>
+    </tr>
+    <tr>
+      <th>Amount</th>
+      <td>{{ data['amount']}}&nbsp;</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <td>{{ data['status']}}&nbsp;</td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+<title>Highlights</title>
+{% extends 'artist_panel/artist_index.html' %}
+{% block body %}
+<form name="form1" method="post" action="/view_highlight_post">
+  <table class="table table-borderless">
+      <tr>
+          <td><input type="text" name="search_field" class="form-control"></td>
+          <td><input type="submit" name="s1" value="Search" class="btn btn-primary"></td>
+      </tr>
+  </table>
+  <table class="table table-bordered table-striped table-hover">
+    <tr style="background: #e01f3d; color: #ffffff">
+      <th>SL No</th>
+      <th>Name</th>
+      <th>Programme Name</th>
+      <th>Description</th>
+      <th>Photo 01</th>
+      <th>Photo 02</th>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{i['name']}}</td>
+      <td>{{i['program_name']}}</td>
+      <td>{{i['description']}}</td>
+      <td><img src="{{i['photo_1']}}" width="100px" height="100px"></td>
+      <td><img src="{{i['photo_2']}}" width="100px" height="100px"></td>
+      <td><a href="/edit_highlight/{{ i['highlight_id'] }}" class="btn btn-info">Edit</a></td>
+      <td><a href="/delete_highlight/{{ i['highlight_id'] }}" class="btn btn-danger" onclick="return confirm('Do you want to delete this?')">Delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

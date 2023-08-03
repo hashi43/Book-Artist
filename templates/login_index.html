@@ -1,0 +1,89 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+-->
+
+<html lang="zxx">
+
+<head>
+    <title>Log in - Book artist account</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <!-- //Meta tag Keywords -->
+    <link href="//fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <!--/Style-CSS -->
+    <link rel="stylesheet" href="/static/login/css/style.css" type="text/css" media="all" />
+    <!--//Style-CSS -->
+    <link rel="stylesheet" href="/static/login/css/font-awesome.min.css" type="text/css" media="all">
+
+</head>
+
+<body>
+    <div class="w3l-signinform">
+        <!-- container -->
+        <div class="wrapper">
+            <!-- main content -->
+            <div class="w3l-form-info">
+                <div class="w3_info">
+                    <h1>Welcome Back</h1>
+                    <p class="sub-para">The Artist Sign Means Happy Motoring</p>
+                    <h2>Log In</h2>
+                    <form action="/login_post" method="post">
+                        <div class="input-group">
+                            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                            <input type="email" placeholder="Email" required="" id="fname" name="textfield">
+                        </div>
+                        <div class="input-group two-groop">
+                            <span><i class="fa fa-key" aria-hidden="true"></i></span>
+                            <input type="Password" placeholder="Password" required="" id="pword" name="textfield2">
+                        </div>
+                        <div class="form-row bottom">
+                            <div class="form-check">
+                                <input type="checkbox" id="remenber" name="remenber" value="remenber">
+                                <label for="remenber"> Remember me?</label>
+                            </div>
+                            <a href="#url" class="forgot">Forgot password?</a>
+                        </div>
+                        <button class="btn btn-primary btn-block" type="submit" onClick="inputPass(),enterPassword(); return false">Log In</button>
+                    </form>
+                
+                    <p class="account">Don't have an account? <a href="/register">Register</a></p>
+                </div>
+            </div>
+            <!-- //main content -->
+        </div>
+        <!-- //container -->
+        <!-- footer -->
+        <div class="footer">
+            <p>&copy; 2021 Gathering Log In form. All Rights Reserved | Design by <a href="#"
+                    target="blank">W3layouts</a></p>
+        </div>
+        <!-- footer -->
+    </div>
+<script>
+    function inputPass() {
+				var x = document.forms["myForm"]["pword"].value;
+				if (x == "") {
+					alert("Password must be filled out");
+		return false;
+	}
+}
+
+function enterPassword() {
+		var password = document.getElementById("pword").value;
+		var username = document.getElementById("fname").value;
+		if (password == "hello" && username == "1234") {
+			window.location = "login_index.html";
+			return true;
+			}
+		else if (password !== "hello" && username !== "1234") {
+			alert("Either Username or Password is incorrect");
+			return false;
+	}
+}
+</script>
+
+</body>
+
+</html>

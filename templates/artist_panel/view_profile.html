@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+<title>Profile</title>
+{% extends 'artist_panel/artist_index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/edit_profile">
+  <p>&nbsp;</p>
+  <table class="table table-borderless">
+    <tr>
+      <th></th>
+      <td><img src="{{ data['logo'] }}"alt="" width="100px" height="100px"/></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table class="table table-bordered table-striped table-hover">
+    <tr>
+      <th>NAME</th>
+      <td>{{ data['name'] }}</td>
+    </tr>
+
+    <tr>
+      <th>EMAIL</th>
+      <td>{{ data['email'] }}</td>
+    </tr>
+    <tr>
+      <th>PHONE</th>
+      <td>{{ data['phone'] }}&nbsp;</td>
+    </tr>
+    <tr>
+      <th>ADDRESS</th>
+      <td>{{ data['place'] }}
+          <br>{{ data['post']}}
+          <br>{{ data['district']}}
+          <br>{{ data['pincode']}}&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td><a href="/edit_profile/{{ data['login_id'] }}" class="btn btn-info">Edit</a></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

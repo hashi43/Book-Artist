@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+<title>Approved Artists</title>
+{% extends 'admin/index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/approved_artistpanel_post">
+  <table class="table table-borderless">
+    <tr>
+      <td><input type="text" name="textfield" id="textfield" class="form-control" /></td>
+      <td><input type="submit" name="button" id="button" value="Search" class="btn btn-primary" /></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table class="table table-bordered table-striped table-hover">
+    <tr style="background: #e01f3d; color: #ffffff">
+      <th>SL NO</th>
+      <th>LOGO</th>
+      <th>NAME</th>
+      <th>EMAIL</th>
+      <th>PHO NE</th>
+      <th>ADDRESS</th>
+      <th>LOCATION</th>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td><img src="{{ i['logo'] }}" alt="" width="100px" height="100px"/></td>
+      <td>{{ i['name'] }}</td>
+      <td>{{ i['email'] }}</td>
+      <td>{{ i['phone'] }}&nbsp;</td>
+      <td>{{ i['place']}}
+          <br>{{ i['post']}}
+          <br>{{ i['district']}}
+          <br>{{ i['pincode']}}</td>
+      <td>{{ i['latitude'] }}
+      <br>{{ i['longitude'] }}</td>
+      <td><a href="/reject_artist_panelnew/{{ i['login_id'] }}" class="btn btn-danger">REJECT</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+
+</form>
+{% endblock %}

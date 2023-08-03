@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+<title>Bookings</title>
+{% extends 'artist_panel/artist_index.html' %}
+{% block body %}
+<form name="form1" method="post" action="">
+  <table class="table table-bordered table-striped table-hover">
+    <tr style="background: #e01f3d; color: #ffffff">
+      <th>SI NO</th>
+      <th>User Details</th>
+      <th>Program</th>
+      <th>Budget</th>
+      <th>Charted Date</th>
+      <th>Location</th>
+      <th>Status</th>
+      <th>Approve</th>
+      <th>Reject</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{loop.index }}</td>
+      <td>&nbsp;{{ i['name'] }}
+      <br>{{ i['email'] }}
+      <br>{{ i['phone'] }}
+      <br>{{ i['place'] }}
+      <br>{{ i['post'] }}
+      <br>{{ i['district'] }}
+      <br>{{ i['pincode'] }}</td>
+      <td>&nbsp;{{ i['program_name'] }}</td>
+      <td>{{ i['budget'] }}</td>
+      <td>{{ i['bdate'] }}</td>
+      <td>&nbsp;{{ i['location'] }}</td>
+      <td>&nbsp;{{ i['status'] }}</td>
+      <td><a href="/approve_booking/{{ i['book_id']}}" class="btn btn-info">Approve</a></td>
+      <td><a href="/reject_booking/{{ i['book_id']}}" class="btn btn-danger" onclick="return confirm('Are you sure?')">Reject</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

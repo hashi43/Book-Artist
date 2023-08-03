@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+<title>View Highlights</title>
+{% extends 'admin/index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/search_highlights">
+  <table class="table table-borderless">
+    <tr>
+      <td><input type="text" name="textfield" id="textfield" class="form-control"/></td>
+      <td><input type="submit" name="button" id="button" value="SEARCH" class="btn btn-primary"/></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+    <table class="table table-bordered table-striped table-hover">
+    <tr style="background: #e01f3d; color: #ffffff">
+      <th>SI NO</th>
+        <th>Artist Panel Info</th>
+      <th width="57">HIGHLIGHT NAME</th>
+      <th width="102">CATEGORY</th>
+      <th width="91">DESCRIPTION</th>
+      <th width="91"><p>PHOTO 1</p></th>
+      <th width="91">PHOTO 2</th>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['apname'] }}<br>{{ i['apemail'] }}<br>{{ i['apphone'] }}</td>
+      <td>{{ i['name'] }}</td>
+      <td>{{ i['program_name'] }}</td>
+      <td>{{ i['description'] }}</td>
+      <td><img src="{{ i['photo_1'] }}" alt="" width="100px" height="100px"/></td>
+      <td><img src="{{ i['photo_2'] }}" alt="" width="100px" height="100px"/></td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

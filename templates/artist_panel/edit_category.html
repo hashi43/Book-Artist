@@ -1,0 +1,31 @@
+{% extends 'artist_panel/artist_index.html' %}
+{% block body %}
+<form action="/edit_category_post" method="post" enctype="multipart/form-data" name="form1">
+  <table class="table table-bordered table-striped table-hover">
+    <tr>
+        <input type="hidden" name="h1" value="{{ data['program_id'] }}" class="form-control" >
+        <td><img src="{{ data['photo'] }}" width="100px" height="100px"></td>
+    </tr>  
+    <tr>
+      <td>programme</td>
+      <td><input type="text" name="textfield" id="textfield" value="{{ data['program_name'] }}" class="form-control"></td>
+    </tr>
+    <tr>
+      <td>description</td>
+      <td><textarea name="textarea" id="textarea" value="{{ data['description'] }}" class="form-control"></textarea></td>
+    </tr>
+    
+    <tr>
+      <td>budget</td>
+      <td><input type="text" name="textfield2" id="textfield2" value="{{data ['budget'] }}" class="form-control"></td>
+    </tr>
+      <tr>
+          <th>Photo</th>
+          <td><input type="file" name="fileField" class="form-control"></td>
+      </tr>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" name="button" id="button" value="update" class="btn btn-success"></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

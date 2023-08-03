@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+<title>Add Highlights</title>
+{% extends 'artist_panel/artist_index.html' %}
+{% block body %}
+<form action="/add_highlight_post" method="post" enctype="multipart/form-data" name="form1">
+  <table  class="table table-bordered table-striped table-hover">
+    <tr class="table table-bordered table-striped table-hover">
+      <th>Name</th>
+      <td><input type="text" name="textfield" id="textfield" class="form-control" required pattern="[A-Z a-z.]{3,25}"></td>
+    </tr>
+    <tr>
+      <th>Program Name</th>
+      <td><select name="select" id="select"  class="form-control" required  pattern="[A-Z a-z.]{3,25}">
+          <option> </option>
+          {% for i in data %}
+              <option value="{{ i['program_id'] }}">{{ i['program_name'] }}</option>"
+          {% endfor %}
+      </select></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><textarea name="textarea" id="textarea"  class="form-control" required  ></textarea ></td>
+    </tr>
+    <tr>
+      <th>Photo 01</th>
+      <td><input type="file" name="fileField" id="fileField"  class="form-control" required></td>
+    </tr>
+    <tr>
+      <th>photo 02</th>
+      <td><input type="file" name="fileField2" id="fileField2" class="form-control" required></td>
+    </tr>
+    <tr>
+      <td colspan="2"><input type="submit" name="button" id="button" value="Submit" class="btn btn-success"></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

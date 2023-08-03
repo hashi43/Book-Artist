@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/search_programme_reviews_post">
+  <table class="table table-borderless">
+    <tr>
+        <th>From</th>
+      <td><input type="date" name="textfield" id="textfield" class="form-control"/></td>
+        <th>To</th>
+        <td><input type="date" name="textfield1" id="textfield1" class="form-control"/></td>
+      <td><input type="submit" name="button" id="button" value="Search" class="btn btn-primary"/></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table class="table table-bordered table-striped table-hover">
+    <tr style="background: #e01f3d; color: #ffffff">
+      <th>SI NO</th>
+      <th>DATE</th>
+      <th>USER INFO</th>
+      <th>REVIEWS</th>
+      <td></td>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['date'] }}</td>
+      <td>{{ i['name'] }}
+      <br>{{ i['email'] }}<br>
+      <br>{{ i['phone'] }}<br>
+      <br>{{ i['place'] }}<br>
+      <br>{{ i['post'] }}<br>
+      <br>{{ i['district'] }}<br>
+      <br>{{ i['pincode'] }}<br></td>
+      <td>{{ i['review'] }} </td>
+
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'artist_panel/artist_index.html' %}
+{% block body %}
+<form action="/edit_member_post" method="post" enctype="multipart/form-data" name="form1">
+  <table class="table table-bordered table-striped table-hover">
+      <tr>
+          <td colspan="2" align="center"><img src="{{ data['photo'] }}"  width="100px" height="100px"></td>
+      </tr>
+    <tr>
+        <input type="hidden" name="h1" value="{{ mid}}" class="form-control">
+      <th>Name</th>
+      <td><input type="text" name="textfield" id="textfield" value="{{ data['name']}}" class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Email</th>
+      <td><input type="text" name="textfield2" id="textfield2" value="{{ data['email']}}" class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Phone</th>
+      <td><input type="text" name="textfield3" id="textfield3" value="{{ data['phone']}}" class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Gender</th>
+      <td><input type="text" name="textfield6" id="textfield6" value="{{ data['gender']}}" class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Place</th>
+      <td><input type="text" name="textfield5" id="textfield5" value="{{ data['place']}}" class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Post</th>
+      <td><input type="text" name="textfield7" id="textfield7" value="{{ data['post']}}" class="form-control"></td>
+    </tr>
+    <tr>
+      <th>District</th>
+      <td><input type="text" name="textfield8" id="textfield8" value="{{ data['district']}}" class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Pincode</th>
+      <td><input type="text" name="textfield9" id="textfield9" value="{{ data['pincode']}}" class="form-control"></td>
+    </tr>
+    <tr>
+      <th>Photo</th>
+      <td><input type="file" name="fileField" id="fileField" class="form-control"></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2"><input type="submit" name="button" id="button" value="Submit" class="btn btn-success"></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+<title>Rejected Artists</title>
+{% extends 'admin/index.html' %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/rejected_artistpanel_post">
+  <table class="table table-borderless">
+    <tr>
+      <td><input type="text" name="textfield" id="textfield" class="form-control"/></td>
+      <td><input type="submit" name="button" id="button" value="Search" class="btn btn-primary" /></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table class="table table-bordered table-striped table-hover">
+    <tr style="background: #e01f3d; color: #ffffff">
+      <th>SL NO</th>
+      <th>LOGO</th>
+      <th>NAME</th>
+      <th>EMAIL</th>
+      <th>PHONE</th>
+      <th>ADDRESS</th>
+      <th>LOCATION</th>
+    </tr>
+    {% for i in data %}
+          <tr>
+      <td>{{loop.index}}&nbsp;</td>
+      <td><img src="{{ i['logo'] }}" alt="" width="100px" height="100px"/></td>
+      <td>{{ i['name'] }}&nbsp;</td>
+      <td>{{ i['email'] }}&nbsp;</td>
+      <td>{{ i['phone'] }}</td>
+      <td>{{ i['place'] }}
+        <br>{{ i['post'] }}
+        <br>{{ i['district'] }}
+        <br>{{ i['pincode'] }}</td>
+      <td>{{ i['latitude'] }}
+          <br>{{ i['logitude'] }}</td>
+    </tr>
+      {% endfor %}
+
+  </table>
+</form>
+{% endblock %}

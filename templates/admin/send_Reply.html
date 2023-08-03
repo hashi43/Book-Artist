@@ -1,0 +1,16 @@
+{% extends 'admin/index.html' %}
+{% block body %}
+<form method="post" name="f1" action="/replypost">
+    <table class="table table-bordered table-striped table-hover">>
+        <tr style="background: #e01f3d; color: #ffffff">
+            <th>Reply</th>
+            <td><textarea name="textarea" required class="form-control" required></textarea> </td>
+
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" name="s1" value="SEND"></td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

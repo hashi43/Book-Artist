@@ -1,0 +1,80 @@
+{% extends 'artist_panel/artist_index.html' %}
+{% block body %}
+<form action="/edit_profile_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table class="table table-bordered table-striped table-hover">
+    <tr>
+        <input type="hidden" name="h1" value="{{ data['login_id'] }}">
+      <th>NAME</th>
+      <td><input type="text" name="textfield" id="textfield" value="{{ data['name'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th>PLACE</th>
+      <td><input type="text" name="textfield9" id="textfield9" value="{{ data['place'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th>DISTRICT</th>
+      <td><select name="select" id="select" class="form-control">
+          <OPTION VALUE="{{ data['district'] }}">{{ data['district'] }}</OPTION>
+      <option>Kozhikode</option>
+      <option>Kannur</option>
+      <option>malappuram</option>
+      <option>Palakkad</option>
+      <option>Wayanad</option>
+      </select></td>
+    </tr>
+{#    <tr>#}
+{#      <td>STATE</td>#}
+{#      <td><select name="select2" id="select2">#}
+{#          <option value="{{ data['state'] }}">{{ data['state'] }}</option>#}
+{#          <option>Kerala</option>#}
+{#          <option>Karnataka</option>#}
+{#      </select></td>#}
+{#    </tr>#}
+    <tr>
+      <th>POST</th>
+      <td><input type="text" name="textfield11" id="textfield11" value="{{ data['post']}}" class="form-control" /></td>
+    </tr>
+    <tr>
+      <th>PINCODE</th>
+      <td><input type="text" name="textfield3" id="textfield3" value="{{ data['pincode']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th>EMAIL</th>
+      <td><input type="text" name="textfield4" id="textfield4" value="{{ data['email']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th>PHONE</th>
+      <td><input type="text" name="textfield5" id="textfield5" value="{{ data['phone']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th>JOINED</th>
+      <td><input type="date" name="textfield7" id="textfield7" value="{{ data['est_year']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td align="center">Logo</td>
+      <td align="center"><input type="file" name="fileField" id="fileField" value="{{ data['logo']}}" class="form-control"/></td>
+    </tr>
+      <tr>
+        <th>Latitude</th>
+      <td><input type="text" name="textfield8" id="textfield8" value="{{ data['latitude']}}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th>Longitude</th>
+      <td><input type="text" name="textfield10" id="textfield10" value="{{ data['longitude']}}" class="form-control"/></td>
+    </tr>
+   {# <tr>
+      <td>PASSWORD</td>
+      <td><input type="PASSWORD" name="hiddenField" id="hiddenField" value="{{ data['']}}" /></td>
+    </tr>
+    <tr>#}
+      {#  <td>CONFIRM PASSWORD</td>
+      <td><input type="" name="hiddenField2" id="hiddenField2" /></td>
+    </tr>#}
+
+    <tr>
+      <td align="center"><input type="submit" name="button2" id="button2" value="Update" class="btn btn-success"/></td>
+  </tr>
+
+  </table>
+</form>
+{% endblock %}

@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+<title>Change Password</title>
+{% extends 'admin/index.html' %}
+{% block body %}
+<form method="post" name="f1" action="/adm_pswrd_post">
+    <table class="table table-bordered table-striped table-hover">
+        <tr>
+            <th>Current Password</th>
+            <td><input type="text" name="p1" class="form-control" required></td>
+        </tr>
+        <tr>
+            <th>New Password</th>
+            <td><input type="text" name="p2" class="form-control" required></td>
+        </tr>
+        <tr>
+            <th>Confirm Password</th>
+            <td><input type="text" name="p3" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" name="s1" value="Submit" class="btn btn-info"></td>
+        </tr>
+
+    </table>
+</form>
+{% endblock %}
