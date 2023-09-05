@@ -10,3 +10,7 @@ by paying in advance using the mobile application without going there in person 
 He can book and schedule the program from the app so that he only needs to pay them correctly. Also, user can send feedback
 and complaints about any program conducted, and rate them using android application. This project is capable of providing chat 
 option between user and team leader.
+
+# Screenshots
+![ba_ss1web](https://github.com/hashi43/Book-Artist/assets/108570118/e780033b-a7ee-4eea-a800-dbd439a025a5)
+![ba_ss_and](https://github.com/hashi43/Book-Artist/assets/108570118/642238c0-a1cc-4838-a94c-8ce480bbe8f0)
